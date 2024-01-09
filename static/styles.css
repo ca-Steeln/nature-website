@@ -1,0 +1,176 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #3498db;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #2980b9;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+
+    display: grid;
+    gap: 1rem;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+
+}
+
+p {
+    color: #666;
+
+}
+
+.step {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+
+    text-decoration: none; /* Remove the default link underline */
+    color: #333;
+    transition: background-color 0.3s ease;
+
+
+}
+
+.step:hover {
+    background-color: #f5f5f5;
+}
+
+.step > *{
+
+    padding: 10px;
+}
+
+.actions {
+
+    display: grid;
+    justify-content: end;
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+}
+
+.action {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.action:hover {
+    background-color: #2980b9;
+}
+
+.sender{
+
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background-color: #2980b9;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+    margin-top: 20px;
+
+    width: 100%;
+}
+
+.sender:hover {
+    background-color: #3498db;
+}
+
+.sender p{
+
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+
+    section{
+
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .step,
+    .sender {
+
+        margin: 0;
+    }
+
+    .actions, .step p{
+        display: grid;
+        justify-content: center;
+    }
+
+    .action {
+        margin: 5px 0;
+    }
+}
+
+
+@media only screen and (max-width: 380px){
+
+    .actions {
+
+        grid-auto-flow: row;
+    }
+}
