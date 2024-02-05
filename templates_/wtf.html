@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+          position: relative;
+        }
+
+        .absolute {
+          position: absolute;
+          width: 100px;
+        }
+
+        #element1 {
+          height: 100px;
+          background-color: red;
+        }
+
+        #element2 {
+            height: 100px;
+            background-color: blue;
+            transform: translateY(100%);
+        }
+      </style>
+</head>
+<body>
+
+    <div id="container">
+    <div id="element1" class="absolute"></div>
+    <div id="element2" class="absolute"></div>
+    </div>
+
+</body>
+</html>
