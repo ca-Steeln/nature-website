@@ -2,18 +2,34 @@
 let navBar = document.getElementById('#main-nav-bar');
 let MenuTrigger = document.getElementById('menu-trigger');
 
+let mainNav = document.getElementById('main-nav');
 let menuNav = document.getElementById('menu-nav');
 let settingsNav = document.getElementById('settings-nav');
 
+
+// disable leaves fall animations
+const leaves = document.getElementById('leaves');
+const leavesTrigger = document.getElementById('leaves-trigger');
+
 document.addEventListener('click', (e)=>{
 
-    if(e.target === MenuTrigger){
-        menuNav.classList.toggle("visible-card");
-        settingsNav.classList.toggle("visible-card");
-    }else if (menuNav.classList.contains("visible-card")) {
-        menuNav.classList.remove("visible-card");
-        settingsNav.classList.remove("visible-card");
-    }
+  if(e.target === MenuTrigger){
+    menuNav.classList.toggle("visible-card");
+    settingsNav.classList.toggle("visible-card");
+    window.innerWidth <= 250 ? mainNav.classList.toggle("visible-card") : null
+
+  }else if (menuNav.classList.contains("visible-card")) {
+    menuNav.classList.remove("visible-card");
+    settingsNav.classList.remove("visible-card");
+    mainNav.classList.remove("visible-card")
+  }
+
+  if(e.target === leavesTrigger){
+    leaves.classList.toggle('notransition'); // toggle transitions
+    doWhateverCssChangesYouWant(leaves);
+    leaves.offsetHeight; // Trigger a reflow, flushing the CSS changes
+  }
+
 })
 
 document.addEventListener('scroll', (e)=>{
@@ -21,6 +37,7 @@ document.addEventListener('scroll', (e)=>{
     if (menuNav.classList.contains("visible-card")) {
         menuNav.classList.remove("visible-card");
         settingsNav.classList.remove("visible-card");
+        mainNav.classList.remove("visible-card")
     }
 })
 
@@ -66,4 +83,13 @@ function hasScrolled() {
 
   lastScrollTop = st;
 }
+
+// set bg images randomly
+let bgImages = document.querySelectorAll('.sm-bg-images');
+numbers.forEach(bgImages)
+
+function myFunction(item, index, arr) {
+  arr[index] = item * 10;
+}
+
 
