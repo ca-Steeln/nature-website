@@ -437,6 +437,7 @@ header .main-nav{
     grid-auto-flow: column;
 
     padding: .5rem;
+    gap: .25rem;
 
     width: 100%;
     height: 100%;
