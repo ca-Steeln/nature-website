@@ -923,11 +923,10 @@ footer .social-media-nav {
 
     }
 
-    .info-card .space-img {
+    .info-card .card-context {
 
-        visibility: visible;
-        width: 40%;
-        aspect-ratio: 1 / 1;
+        border-top: none;
+        border-right: var(--main-warm-c) 2px solid;
     }
 
 
