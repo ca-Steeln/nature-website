@@ -454,7 +454,7 @@ header .main-nav{
 
 .info-card .card-context .dot {
 
-    width: calc(.6rem + 2vw);
+    width: calc(.5rem + 1vw);
     aspect-ratio: 1 / 1;
 }
 
