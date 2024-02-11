@@ -408,7 +408,6 @@ header .main-nav{
 .info-card{
     display: grid;
     place-items: center;
-    grid-auto-rows: 1fr;
     gap: .25rem;
 
     border-radius: var(--partials-radius);
