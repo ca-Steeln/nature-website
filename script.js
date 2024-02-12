@@ -7,10 +7,6 @@ let menuNav = document.getElementById('menu-nav');
 let settingsNav = document.getElementById('settings-nav');
 
 
-// disable leaves fall animations
-const leaves = document.getElementById('leaves');
-const leavesTrigger = document.getElementById('leaves-trigger');
-
 document.addEventListener('click', (e)=>{
 
   if(e.target === MenuTrigger){
@@ -24,13 +20,32 @@ document.addEventListener('click', (e)=>{
     mainNav.classList.remove("visible-card")
   }
 
-  if(e.target === leavesTrigger){
-    leaves.classList.toggle('notransition'); // toggle transitions
-    doWhateverCssChangesYouWant(leaves);
-    leaves.offsetHeight; // Trigger a reflow, flushing the CSS changes
-  }
 
 })
+
+const leaves = document.getElementById('leaves');
+const leavesTrigger = document.getElementById('falling-leaves-trigger');
+let leavesLoaders = document.querySelectorAll('.loader span');
+const leavesLabel = document.getElementById('leaves-trigger-label')
+
+document.addEventListener('change', function() {
+
+
+  leavesLoaders.forEach(loader => {
+
+    if (leavesTrigger.checked) {
+      loader.classList.remove('paused');
+      leavesLabel.classList.add('on');
+      leavesLabel.classList.remove('off');
+    }else {
+      loader.classList.add('paused');
+      leavesLabel.classList.add('off');
+      leavesLabel.classList.remove('on');
+    }
+  })
+
+
+});
 
 document.addEventListener('scroll', (e)=>{
 
@@ -84,12 +99,12 @@ function hasScrolled() {
   lastScrollTop = st;
 }
 
-// set bg images randomly
-let bgImages = document.querySelectorAll('.sm-bg-images');
-numbers.forEach(bgImages)
+// // set bg images randomly
+// let bgImages = document.querySelectorAll('.sm-bg-images');
+// numbers.forEach(bgImages)
 
-function myFunction(item, index, arr) {
-  arr[index] = item * 10;
-}
+// function myFunction(item, index, arr) {
+//   arr[index] = item * 10;
+// }
 
 
